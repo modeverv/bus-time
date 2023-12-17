@@ -258,6 +258,10 @@ const hNiH = computed(() => {
 </template>
 
 <style scoped>
+body {
+  background-color: #181818;
+  color: white;
+}
 table {
   border-collapse: collapse;
   width: 100%;
