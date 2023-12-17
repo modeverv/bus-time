@@ -191,7 +191,7 @@ const hNiH = computed(() => {
       </button>
     </h1>
     <div>
-      <h1>平日</h1>
+      <h2>平日</h2>
       <table>
         <tr>
           <th>H</th>
@@ -206,7 +206,7 @@ const hNiH = computed(() => {
       </table>
     </div>
     <div>
-      <h1>土曜日</h1>
+      <h2>土曜日</h2>
       <table>
         <tr>
           <th>H</th>
@@ -221,7 +221,7 @@ const hNiH = computed(() => {
       </table>
     </div>
     <div>
-      <h1>日祝日</h1>
+      <h2>日祝日</h2>
       <table>
         <tr>
           <th>H</th>
@@ -232,6 +232,25 @@ const hNiH = computed(() => {
           <td>{{ i }}</td>
           <td>{{ row.join(" ") }}</td>
           <td>{{ hNiH ? hNiH[i].join(" ") : "" }}</td>
+        </tr>
+      </table>
+    </div>
+    <div>
+      <hr/>
+      <h1>全体</h1>
+    </div>
+    <div v-for="(w,i) in kind" key="i">
+      <h2>{{w}}</h2>
+      <table>
+        <tr>
+          <th>H</th>
+          <th>横関</th>
+          <th>横関東口</th>
+        </tr>
+        <tr v-for="(r,x) in timeTable['横関'][w]" key="x">
+          <td>{{ x }}</td>
+          <td>{{ r.join(" ") }}</td>
+          <td>{{ timeTable['横関東口'][w][x] ? timeTable['横関東口'][w][x].join(" ") : "" }}</td>
         </tr>
       </table>
     </div>
